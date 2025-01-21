@@ -1,0 +1,43 @@
+version: '3.9'
+
+services:
+  backend:
+    container_name: backend
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./shared:/app/shared  # Mapping the host folder to the container's shared folder
+    depends_on:
+      - redis
+    networks:
+      - app-network
+
+  frontend:
+    container_name: frontend
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+      - "5173:5173"
+    environment:
+      - REACT_APP_BACKEND_URL=http://backend:8000
+    networks:
+      - app-network
+
+  redis:
+    container_name: redis
+    image: redis:latest  # Using official Redis image
+    ports:
+      - "6380:6379"
+    command: redis-server
+    networks:
+      - app-network
+    restart: always  # Ensure Redis restarts if it fails
+
+networks:
+  app-network:
+    driver: bridge

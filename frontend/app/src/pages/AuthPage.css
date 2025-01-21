@@ -1,0 +1,81 @@
+/* AuthPage.css */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://www.metalyapi-eng.com/images/nazarbayev_center_2.jpg'); /* Add real image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.auth-box {
+  background-color: rgba(0, 0, 51, 0.85); /* Dark blue background for the form box */
+  padding: 40px;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  color: #ffffff; /* White for the heading */
+  margin-bottom: 20px;
+}
+
+.input-group {
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: white;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  background-color: #fff; /* White input background */
+  color: #003366; /* Dark blue text color */
+}
+
+.login-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #003366; /* Dark blue button background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.login-btn:hover {
+  background-color: #002244; /* Slightly darker blue on hover */
+}
+
+.error {
+  color: #ff6666; /* Light red error message */
+  margin-bottom: 10px;
+}
+
+/* Add this at the bottom for autofill styling */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 30px rgb(138, 220, 255) inset !important;
+  -webkit-text-fill-color: #003366 !important; 
+}
+
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 30px rgb(138, 220, 255) inset !important;
+  -webkit-text-fill-color: #003366 !important; 
+}
